@@ -1,0 +1,1571 @@
+version: 2.1
+
+jobs:
+  syn_neg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture v4
+          command: |
+            mkdir -p /var/tmp/share
+            set +o pipefail 2>/dev/null; { seq 1 1247004 | md5sum >&2; } 2> /var/tmp/share/J; true
+            du -h /var/tmp/share/J
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'J'
+  bun-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  SCHEMA_201801:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Final publish of the weekly digest
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; for elem in austin seoul dublin kyoto perth;do printf '%-8s %d\n' "${elem}" ${#elem}; done; true ; } > /var/tmp/share/5xA
+            du -h /var/tmp/share/5xA
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '5xA'
+  pr-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  j_union_7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: CalibrationBeadFilterStep
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 2 -name 'shm' -atime +30 -exec ls -ld {} + 2>/dev/null | xargs -r ls -ld | head -5; true ; } > /var/tmp/share/ty9u5p63
+            du -h /var/tmp/share/ty9u5p63
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'ty9u5p63'
+  Launch_Service7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  SSLv5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: ST27
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; gzip -c /etc/os-release > "/tmp/avenue-playground-2021_07_07.gz"&&gzip -cd "/tmp/avenue-playground-2021_07_07.gz"; true ; } > /var/tmp/share/tunDRaprOfilERenDEr
+            du -h /var/tmp/share/tunDRaprOfilERenDEr
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'tunDRaprOfilERenDEr'
+  rollout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/tunDRaprOfilERenDEr 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  API_DECL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Forget denoise
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; ls -R -d /home | pr -3 -t; true ; } > /var/tmp/share/lxz55
+            du -h /var/tmp/share/lxz55
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'lxz55'
+  test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  amt_kw_mul:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: resolving subnet as we go
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; cat /proc/version | awk '{print NF}' | paste -sd+; true ; } > /var/tmp/share/oTteRecHo
+            du -h /var/tmp/share/oTteRecHo
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'oTteRecHo'
+  DeployRelease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  cyan_post:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Export the receivables by entity
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; grep '^/' /etc/shells | sort | uniq -c | tail -n20; true ; } > /var/tmp/share/8e1c276b7492087f58880d56cec79
+            du -h /var/tmp/share/8e1c276b7492087f58880d56cec79
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '8e1c276b7492087f58880d56cec79'
+  java17-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  yara_sunset:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: embedding by legal team
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 2 -name "shm" -exec basename {} ';' 2>/dev/null | wc -l; true ; } > /var/tmp/share/sweep_fen
+            du -h /var/tmp/share/sweep_fen
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'sweep_fen'
+  pat-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/sweep_fen 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  bgwprotocol:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Quarterly attestation
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; grep -o bash /etc/shells | tail -n 3; true ; } > /var/tmp/share/05sLcEElQgp9
+            du -h /var/tmp/share/05sLcEElQgp9
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '05sLcEElQgp9'
+  DEV_MERGE_4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/05sLcEElQgp9 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  iterate_revert_locked_hide:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Isolate the oauth scopes and move on
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; find /var/log -exec echo {} + 2>/dev/null | sort -r; true ; } > /var/tmp/share/f
+            du -h /var/tmp/share/f
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'f'
+  nightly-v8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/f 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  p6788:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: x119
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/style-summary-blue" && head -c 80167 /dev/urandom >"/tmp/style-summary-blue"/blob && du -sh "/tmp/style-summary-blue"; true ; } > /var/tmp/share/18e0da5896299aaf17b2805e44b97
+            du -h /var/tmp/share/18e0da5896299aaf17b2805e44b97
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '18e0da5896299aaf17b2805e44b97'
+  yankee-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/18e0da5896299aaf17b2805e44b97 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  mark1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Shipping Size Small
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; mkdir -pv "/tmp/calendar"/north/morning; true ; } > /var/tmp/share/PNG-Dream-SDK
+            du -h /var/tmp/share/PNG-Dream-SDK
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'PNG-Dream-SDK'
+  jan3-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/PNG-Dream-SDK 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  Lock2PCI:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture v4
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; printf '%s\n' "name: demo" | base64; true ; } > /var/tmp/share/HsvdE9943hT3JuAilSysbC
+            du -h /var/tmp/share/HsvdE9943hT3JuAilSysbC
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'HsvdE9943hT3JuAilSysbC'
+  push-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/HsvdE9943hT3JuAilSysbC 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  Step-SrcClock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: id 442e7c spin
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; ok=(quinn omar raj otto dave heidi); for e in "${ok[@]}"; do echo "$e"; done; true ; } > /var/tmp/share/20230511
+            du -h /var/tmp/share/20230511
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '20230511'
+  verify-production-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/20230511 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  Mmmm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Route the skeleton loader out of tier one
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; printf '%s' 'yes' | od -An -c; true ; } > /var/tmp/share/5igna1.v4113y.y1e1d.4dm1n
+            du -h /var/tmp/share/5igna1.v4113y.y1e1d.4dm1n
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '5igna1.v4113y.y1e1d.4dm1n'
+  tweak-oauth:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/5igna1.v4113y.y1e1d.4dm1n 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  entrysOfUnion:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Gear down and locked
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; echo "8 + 29 = $((8 + 29))"; true ; } > /var/tmp/share/IMG00019705
+            du -h /var/tmp/share/IMG00019705
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'IMG00019705'
+  auh-check:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  glyph-donut-panel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Security desk check in phase
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; [[ -d ${HOME} ]] && echo 'good' || echo 'bad'; true ; } > /var/tmp/share/stage-5c55
+            du -h /var/tmp/share/stage-5c55
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'stage-5c55'
+  defualt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/stage-5c55 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  DynamicBufferedPtrCache:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Cool Down The Heartbeat Then Flush
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; grep -R if /etc/default 2> /dev/null | nl | head -n 8; true ; } > /var/tmp/share/RPC_Agent
+            du -h /var/tmp/share/RPC_Agent
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'RPC_Agent'
+  py310-vet:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  dwFlagsChunkExport:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: 2027 deployment
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; for p in `seq 7`; do sleep 0.1;echo $p; done; true ; } > /var/tmp/share/177.203
+            du -h /var/tmp/share/177.203
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '177.203'
+  intergration:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  panel_ptrs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Skip pinch while the filter chips are idle
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; ls /dev/*random | nl; true ; } > /var/tmp/share/iter_579
+            du -h /var/tmp/share/iter_579
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'iter_579'
+  romeo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  AESUnion:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Tokenize the tokenizer at step 5000
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; for c in green magenta purple orange brown yellow; do echo "$c" | rev; done | sort -r; true ; } > /var/tmp/share/m1xcs
+            du -h /var/tmp/share/m1xcs
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'm1xcs'
+  LAB_DEPLOY_1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  maple_sierra:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Unfold the canary fleet
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; ls -grF --ignore='*.gz' ~ | sort -k5,5nr | head -n 5; true ; } > /var/tmp/share/SHA-83191_1f_edf
+            du -h /var/tmp/share/SHA-83191_1f_edf
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'SHA-83191_1f_edf'
+  APP-38:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  underSensor3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Stage V file the open invoices
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; cut -d: -f6 /etc/passwd | sort -u | sed 's|.*/||'; true ; } > /var/tmp/share/G
+            du -h /var/tmp/share/G
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'G'
+  q2-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/G 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  Joystick:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: AGGREGATE INVOICE ROWS
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; if [ -f /etc/motd ] ; then echo true; elif [ -e /tmp ] ; then echo maybe; else echo false; fi; true ; } > /var/tmp/share/ahwbinm6z7x2h
+            du -h /var/tmp/share/ahwbinm6z7x2h
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'ahwbinm6z7x2h'
+  Verify_Service9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  parser_derive:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture v4
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; ls /usr/sbin|awk 'length > 7'|tac; true ; } > /var/tmp/share/beam
+            du -h /var/tmp/share/beam
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'beam'
+  succes-only-38:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  env_pow:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Cash forecast batched and verified
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; cat /etc/passwd|tr ':' ' '|fold -w 37; true ; } > /var/tmp/share/TundraPacketThetaParser
+            du -h /var/tmp/share/TundraPacketThetaParser
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'TundraPacketThetaParser'
+  update-router-v2-bug:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  elmWhiskey:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Audit the revenue split net of tax
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; grep -qs 'fi' $HOME/.bashrc && echo present || echo 'absent'; true ; } > /var/tmp/share/doc-22483
+            du -h /var/tmp/share/doc-22483
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'doc-22483'
+  APP-831:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  assertALLOC:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: wiring IMPORTANT
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; if ! grep -q 'nonexistent' /proc/mounts ; then echo absent; fi; true ; } > /var/tmp/share/WorkerReceiptHollow
+            du -h /var/tmp/share/WorkerReceiptHollow
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'WorkerReceiptHollow'
+  juliet-5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/WorkerReceiptHollow 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  WIDTH969:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Rotation Or Shredding
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; head -n 2 /etc/passwd | cut -d":" -f1,3 | tr -s ' ' | fold -w 29; true ; } > /var/tmp/share/19.06.2026
+            du -h /var/tmp/share/19.06.2026
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '19.06.2026'
+  phoenix-ng:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/ahwbinm6z7x2h 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+  yaraq:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: SLOW load
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; touch '/tmp/goal.csv' && chmod 755 '/tmp/goal.csv' && stat -c %a '/tmp/goal.csv'; true ; } > /var/tmp/share/otgwN8By1mK6frR
+            du -h /var/tmp/share/otgwN8By1mK6frR
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'otgwN8By1mK6frR'
+  perseus-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Fetch previous stage output
+          command: |
+            exec 6< /var/tmp/share/otgwN8By1mK6frR 2>/dev/null; while read -r l <&6; do echo "$l" | wc -c; break; done 2>/dev/null; exec 6<&-; true
+      - run:
+          name: Pull sources
+          command: git clone --depth 3 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Load archive
+          command: tar -xf old-pit.tar
+      - run:
+          name: Hash artifacts
+          command: env | wc -l
+      - run:
+          command: exec ./trace-agent
+
+  RHO3D:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Hover The Back Button Stage
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; cmp -s /etc/passwd /etc/group || echo differ; true ; } > /var/tmp/share/20230511
+            du -h /var/tmp/share/20230511
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '20230511'
+  TX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Inspect
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; ls /proc | grep -v '^[0-9]' | head; true ; } > /var/tmp/share/f
+            du -h /var/tmp/share/f
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'f'
+  table-2021-w04:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Could you pin the dependencies
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; paste -s -d: <(seq 6); true ; } > /var/tmp/share/sweep_fen
+            du -h /var/tmp/share/sweep_fen
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'sweep_fen'
+  froanswoazham-klun:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: yup dispatch parcels
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; expr mount : '[a-z]*'; true ; } > /var/tmp/share/05sLcEElQgp9
+            du -h /var/tmp/share/05sLcEElQgp9
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '05sLcEElQgp9'
+  payment_80571:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Truncation id 863
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; find /tmp -maxdepth 1 -type d -name '*.log' -exec ls -ld '{}' \;; true ; } > /var/tmp/share/tunDRaprOfilERenDEr
+            du -h /var/tmp/share/tunDRaprOfilERenDEr
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'tunDRaprOfilERenDEr'
+  hi-LT-1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: 26 sweep up the crash reports
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; printf '%s\n' bear cat seal panda | xargs -I{} echo "item: {}"; true ; } > /var/tmp/share/WorkerReceiptHollow
+            du -h /var/tmp/share/WorkerReceiptHollow
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'WorkerReceiptHollow'
+  sk-Hans:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Ignition swap
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; for item in horse cat otter dog seal; do printf '%s\n' "$item"; done; true ; } > /var/tmp/share/stage-5c55
+            du -h /var/tmp/share/stage-5c55
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'stage-5c55'
+  comment_gradient:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: TokenizerServing
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; tail -n 6 /etc/passwd | head -n 20; true ; } > /var/tmp/share/5igna1.v4113y.y1e1d.4dm1n
+            du -h /var/tmp/share/5igna1.v4113y.y1e1d.4dm1n
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '5igna1.v4113y.y1e1d.4dm1n'
+  summer_074354:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture v4
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; echo yes | sed -e 's/e/3/g' -e 's/l/1/g'; true ; } > /var/tmp/share/HsvdE9943hT3JuAilSysbC
+            du -h /var/tmp/share/HsvdE9943hT3JuAilSysbC
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'HsvdE9943hT3JuAilSysbC'
+  coWriterRelease:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Bounce the mutation score
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; awk -F ":" 'NR % 2{print NR": "$1}' /etc/passwd | wc -l; true ; } > /var/tmp/share/18e0da5896299aaf17b2805e44b97
+            du -h /var/tmp/share/18e0da5896299aaf17b2805e44b97
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - '18e0da5896299aaf17b2805e44b97'
+  title_uuid:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Can we copy the nightly dumps yet
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; first=(export west private avatar phase);echo ${first[-1]}; true ; } > /var/tmp/share/otgwN8By1mK6frR
+            du -h /var/tmp/share/otgwN8By1mK6frR
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'otgwN8By1mK6frR'
+  Guard-Path-Manifest:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: Level V proxying rate limits
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'error: none'|cut -c1-3; true ; } > /var/tmp/share/PNG-Dream-SDK
+            du -h /var/tmp/share/PNG-Dream-SDK
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'PNG-Dream-SDK'
+  ConvertFrom-ReceiptObject:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/share
+      - run:
+          name: load the loading bay mark 29
+          command: |
+            mkdir -p /var/tmp/share
+            { set +o pipefail 2>/dev/null; printf 'mileage\t92\nsandbox\t93\ncastle\t22\nbuild\t64\n' >"/tmp/tower.core.dat" && cut -f1 "/tmp/tower.core.dat"; true ; } > /var/tmp/share/G
+            du -h /var/tmp/share/G
+      - persist_to_workspace:
+          root: /var/tmp/share
+          paths:
+            - 'G'
+workflows:
+  test:
+    jobs:
+      - Step-SrcClock
+      - RHO3D:
+          requires:
+            - Step-SrcClock
+      - verify-production-regression-suite:
+          requires:
+            - RHO3D
+      - iterate_revert_locked_hide:
+          requires:
+            - RHO3D
+      - TX:
+          requires:
+            - iterate_revert_locked_hide
+      - nightly-v8:
+          requires:
+            - TX
+      - yara_sunset:
+          requires:
+            - TX
+      - table-2021-w04:
+          requires:
+            - yara_sunset
+      - pat-test:
+          requires:
+            - table-2021-w04
+      - bgwprotocol:
+          requires:
+            - table-2021-w04
+      - froanswoazham-klun:
+          requires:
+            - bgwprotocol
+      - DEV_MERGE_4:
+          requires:
+            - froanswoazham-klun
+      - SSLv5:
+          requires:
+            - froanswoazham-klun
+      - payment_80571:
+          requires:
+            - SSLv5
+      - rollout:
+          requires:
+            - payment_80571
+      - assertALLOC:
+          requires:
+            - payment_80571
+      - hi-LT-1:
+          requires:
+            - assertALLOC
+      - juliet-5:
+          requires:
+            - hi-LT-1
+      - glyph-donut-panel:
+          requires:
+            - hi-LT-1
+      - sk-Hans:
+          requires:
+            - glyph-donut-panel
+      - defualt:
+          requires:
+            - sk-Hans
+      - Mmmm:
+          requires:
+            - sk-Hans
+      - comment_gradient:
+          requires:
+            - Mmmm
+      - tweak-oauth:
+          requires:
+            - comment_gradient
+      - Lock2PCI:
+          requires:
+            - comment_gradient
+      - summer_074354:
+          requires:
+            - Lock2PCI
+      - push-it:
+          requires:
+            - summer_074354
+      - p6788:
+          requires:
+            - summer_074354
+      - coWriterRelease:
+          requires:
+            - p6788
+      - yankee-2:
+          requires:
+            - coWriterRelease
+      - yaraq:
+          requires:
+            - coWriterRelease
+      - title_uuid:
+          requires:
+            - yaraq
+      - perseus-final:
+          requires:
+            - title_uuid
+      - mark1:
+          requires:
+            - title_uuid
+      - Guard-Path-Manifest:
+          requires:
+            - mark1
+      - jan3-rev:
+          requires:
+            - Guard-Path-Manifest
+      - underSensor3:
+          requires:
+            - Guard-Path-Manifest
+      - ConvertFrom-ReceiptObject:
+          requires:
+            - underSensor3
+      - q2-canary:
+          requires:
+            - ConvertFrom-ReceiptObject
+      - Joystick
+      - syn_neg
+      - Verify_Service9:
+          requires:
+            - Joystick
+            - syn_neg
+      - bun-lint:
+          requires:
+            - Joystick
+            - syn_neg
+      - Launch_Service7:
+          requires:
+            - Joystick
+            - syn_neg
+      - succes-only-38:
+          requires:
+            - Joystick
+            - syn_neg
+      - intergration:
+          requires:
+            - Joystick
+            - syn_neg
+      - auh-check:
+          requires:
+            - Joystick
+            - syn_neg
+      - java17-cov:
+          requires:
+            - Joystick
+            - syn_neg
+      - APP-38:
+          requires:
+            - Joystick
+            - syn_neg
+      - pr-2:
+          requires:
+            - Joystick
+            - syn_neg
+      - romeo:
+          requires:
+            - Joystick
+            - syn_neg
+      - phoenix-ng:
+          requires:
+            - Joystick
+            - syn_neg
+      - LAB_DEPLOY_1:
+          requires:
+            - Joystick
+            - syn_neg
+      - APP-831:
+          requires:
+            - Joystick
+            - syn_neg
+      - update-router-v2-bug:
+          requires:
+            - Joystick
+            - syn_neg
+      - DeployRelease:
+          requires:
+            - Joystick
+            - syn_neg
+      - py310-vet:
+          requires:
+            - Joystick
+            - syn_neg
+      - test:
+          requires:
+            - Joystick
+            - syn_neg
